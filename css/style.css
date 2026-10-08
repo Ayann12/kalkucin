@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url("/img/love.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+#content-box {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(108, 201, 255);
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+#calculate {
+    width: 150px;
+    height: 50px;
+
+    background-color: rgb(62, 41, 250);
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}
