@@ -1,29 +1,278 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background-image: url("/img/love.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(135deg, #4d9aff, #ece8ea);
+}
+
+/* =========================
+   CONTENT BOX
+========================= */
 
 #content-box {
-    width: 400px;
-    height: 500px;
-    background-color: rgb(108, 201, 255);
-    padding: 20px;
-    margin: 0 auto;
-    margin-top: 50px;
-    border-radius: 10px;
+    width: 450px;
+
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-#calculate {
-    width: 150px;
-    height: 50px;
+/* =========================
+   HEART
+========================= */
 
-    background-color: rgb(62, 41, 250);
-    color: white;
-    font-size: 20px;
-    border: none;
+.heart {
+    font-size: 55px;
+
+    margin-bottom: 5px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1 {
+    margin: 5px 0 10px;
+
+    color: #4d9aff;
+
+    font-size: 32px;
+}
+
+.description {
+    color: #666;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.form-group {
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    width: 130px;
+
+    text-align: left;
+
+    font-weight: bold;
+
+    color: #444;
+}
+
+.form-group input {
+    flex: 1;
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 2px solid #eeeeee;
+
     border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #4d9aff;
+
+    box-shadow:
+        0 0 8px rgba(255, 107, 154, 0.2);
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+/* =========================
+   CALCULATE BUTTON
+========================= */
+
+#calculate {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #4d9aff;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#calculate:hover {
+    background: #4d9aff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(255, 63, 117, 0.3);
+}
+
+/* Calculate sudah digunakan */
+
+#calculate:disabled {
+    background: #cccccc;
+
+    color: #777777;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+#reset {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 12px;
+
+    border: 2px solid #4d9aff;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #4d9aff;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#reset:hover {
+    background: #4d9aff;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   RESULT
+========================= */
+
+#result {
+    margin-top: 25px;
+}
+
+#result-message {
+    margin: 0 0 8px;
+
+    color: #4d9aff;
+
+    font-size: 20px;
+}
+
+#result-percentage {
+    margin: 0;
+
+    color: #4d9aff;
+
+    font-size: 36px;
+
+    font-weight: bold;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    #content-box {
+        width: 90%;
+
+        padding: 25px;
+    }
+
+    .form-group {
+        display: block;
+
+        text-align: left;
+    }
+
+    .form-group label {
+        display: block;
+
+        width: 100%;
+
+        margin-bottom: 7px;
+    }
+
+    .form-group input {
+        width: 100%;
+    }
 }
